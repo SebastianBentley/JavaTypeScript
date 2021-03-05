@@ -5,4 +5,4 @@
 https://github.com/SebastianBentley/JavaTypeScript/blob/main/P1-Handin.pdf
 
 
-##### -Some of the exercises are made in colaboration with Michael Ibsen, Rasmus Grønbek and Pelle Rasmussen.
+##### -Some of the exercises are made in collaboration with Michael Ibsen, Rasmus Grønbek and Pelle Rasmussen.
