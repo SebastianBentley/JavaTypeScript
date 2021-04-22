@@ -6,11 +6,10 @@
  */
 export type Gender = "MALE" | "FEMALE" | "OTHER"
 
-export default interface ILyndaFriend {
+export default interface IFriend {
   id?: string
   firstName: string
   lastName: string
-  gender: Gender
-  age: number
   email: string
+  role: string
 }

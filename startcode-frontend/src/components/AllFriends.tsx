@@ -1,22 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { useQuery, gql } from "@apollo/client"
-import ILyndaFriend from "../interfaces/interfaces"
+import IFriend from "../interfaces/interfaces"
 
 interface IFriends {
-  allFriends: ILyndaFriend[];
+  getAllFriends: IFriend[];
 }
 
 
 export const ALL_FRIENDS = gql`
  query {
-  allFriends{
+  getAllFriends{
     id
     firstName
     lastName
-    gender
     email
-    age
+    role
   }
 }
 `
@@ -32,11 +31,11 @@ export default function All() {
     <div>
       <table className="table">
         <thead>
-          <tr><th>ID</th><th>firstName</th><th>lastName</th><th>Gender</th><th>email</th><th>age</th></tr>
+          <tr><th>ID</th><th>firstName</th><th>lastName</th><th>email</th><th>role</th></tr>
         </thead>
         <tbody>
-          {data && data.allFriends.map(f => (
-            <tr key={f.id}><td>{f.id}</td><td>{f.firstName}</td><td>{f.lastName}</td><td>{f.gender}</td><td>{f.email}</td><td>{f.age}</td></tr>
+          {data && data.getAllFriends.map(f => (
+            <tr key={f.id}><td>{f.id}</td><td>{f.firstName}</td><td>{f.lastName}</td><td>{f.email}</td><td>{f.role}</td></tr>
           ))}
         </tbody>
       </table>
