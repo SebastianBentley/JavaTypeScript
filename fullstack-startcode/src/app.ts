@@ -37,7 +37,7 @@ import authMiddleware from "./middelware/basic-auth"
 //app.use("/graphql", authMiddleware)
 
 
-/* app.use("/graphql", (req, res, next) => {
+app.use("/graphql", (req, res, next) => {
     const body = req.body;
     if (body && body.query && body.query.includes("createFriend")) {
         console.log("Create")
@@ -50,7 +50,7 @@ import authMiddleware from "./middelware/basic-auth"
         return authMiddleware(req, res, next)
     }
     next()
-}) */
+})
 
 app.use('/graphql', graphqlHTTP({
     schema: schema,
