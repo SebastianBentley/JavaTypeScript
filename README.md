@@ -1,6 +1,5 @@
-# JavaTypeScript handin 2
-### Made by Sebastian James Bentley (cph-sb287) & Sebastian Steen Lundby Hansen (cph-sh499)
-
+# JavaTypeScript handin 3
+### Made by Sebastian James Bentley (cph-sb287)
 ### Link to handin:
 https://github.com/SebastianBentley/JavaTypeScript/blob/main/P3-Handin.pdf
 
