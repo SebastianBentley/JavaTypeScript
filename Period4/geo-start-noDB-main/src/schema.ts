@@ -71,7 +71,7 @@ type Query {
    """
    distanceToUser("callers latitude" latitude: Float!, 
                   "callers longitude" longitude: Float!, 
-                  "user to find" userName: String) : User 
+                  "user to find" userName: String) : User
 }
 `
 const schema = makeExecutableSchema({ typeDefs, resolvers });
