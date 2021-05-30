@@ -33,6 +33,24 @@ app.get("/demo", (req, res) => {
     res.send("Server is really up");
 });
 
+//Single REST-Endpoint which can fin nearby friends.
+import PositionFacade from './facades/positionFacade';
+let facade: PositionFacade;
+app.post("/friends", async (req, res) => {
+    if (!facade) {
+        const db = req.app.get("db")
+        facade = new PositionFacade(db)
+    }
+    const { email, password, longitude, latitude, distance } = req.body;
+    const friends = await facade.findNearbyFriends(email, longitude, latitude, distance, password)
+    const friendsToReturn = friends.map((f: any) => {
+        return { email: f.email, name: f.name, longitude: f.location.coordinates[0], latitude: f.location.coordinates[1] }
+    })
+    res.json(friendsToReturn)
+})
+
+
+
 import authMiddleware from "./middelware/basic-auth"
 //app.use("/graphql", authMiddleware)
 
